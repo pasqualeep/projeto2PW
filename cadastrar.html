@@ -9,63 +9,43 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets.js/cadastrar.js" defer></script>
-    <title>Quiz</title>
+    <title>Mecânica em dia</title>
 </head>
 
 <body>
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">projeto2PW</a>
+            <a href="#" class="brand-logo">Lista de manutenções</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/">Tarefas</a></li>
-                <li class="active"><a href="cadastrar.html">Criar Tarefa</a></li>
-                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="index.html">Manutenção</a></li>
+                <li class="active"><a href="cadastrar.html">Adicionar Manutenção</a></li>
+                <li><a href="perfil.html">Veículo</a></li>
             </ul>
         </div>
     </nav>
     <main class="container">
-        <h4 class="container">Cadastrar</h4>
+        <h4>Adicionar manutenção</h4>
         <div class="row">
-            <div class="col s12">
+            <form id="form-manutencao" class="col s12">
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="titulo" type="text" class="validate" minlength="3">
-                        <label for="Descrição">Titulo</label>
-                        <span class="helper-text"
-                            data-error="Título muito curto. Preencha um titulo com pelo menos 3 caracteres "
-                            data-success="">Digite o título da tarefa</span>
+                        <input id="titulo" type="text" class="validate" minlength="3" required>
+                        <label for="titulo">Título</label>
+                        <span class="helper-text" data-error="Título muito curto. Preencha um título com pelo menos 3 caracteres"
+                            data-success="">Digite o título da manutenção</span>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <textarea id="descricao" class="materialize-textarea"></textarea>
-                <label for="descricao">Descrição</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="pontos" type="number" class="validate" min="1" max="100">
-                <label for="Pontos">Pontos</label>
-                <span class="helper-text" data-error="Pontuação inválida. Informe um valor entre 1 e 100"
-                    data-success="">Digite a pontuação
-                </span>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <a href="index.html" class="btn grey">Cancelar</a>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <button id="botao-cadastrar" class="btn">Salvar</button>
+                        <a href="index.html" class="btn grey">Cancelar</a>
+                    </div>
+                    <div class="col">
+                        <button id="botao-cadastrar" class="btn" type="submit">Adicionar Manutenção</button>
                     </div>
                 </div>
-                </form>
-            </div>
-
+            </form>
+        </div>
     </main>
-
 </body>
 
 </html>
