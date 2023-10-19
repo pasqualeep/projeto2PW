@@ -1,32 +1,34 @@
-window.addEventListener("load", () => {
-    let tarefa = JSON.parse(localStorage.getItem("tarefas")) || []
+window.addEventListener("load", atualizar)
+    function atualizar(){
+        document.querySelector("#lista-manutencao").innerHTML = ""
+        let tarefa = JSON.parse(localStorage.getItem("tarefas")) || []
+        tarefa.forEach(tarefa => criarCard(tarefa))
+}
 
-    tarefas.forEach(tarefa => criarCard(tarefa))
-
-})
 
 function criarCard(tarefa) {
     const card = document.createElement("div")
-
-    card.innerHTML = ` 
+    card.classList.add("cool", "s12", "m6", "l4")
+    card.innerHTML = `
+    
     <div class="card">
     <div class="card-content">
-        <span class="card-title"> ${tarefa.titulo} </span>
-        <p> ${tarefa.descricao} </p>
-        <span data-badge-caption="pontos" class="badge blue white-text">${tarefa.ponto}</span>
-    </div>
-    <div class="card-action">
-        <a href="#" class="btn red">
-            <i class="material-icons">delete_forever</i>
-        </a>
-        <a href="#" class="btn verde">
-            <i class="material-icons">check</i>
-        </a>
-    </div>
-</div>
+        <span class="card-title">${tarefa.titulo} </span>
+            <p>${tarefa.quilometragem} </p>
+            <p>${tarefa.data} </p>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="index.html" class="btn red">Excluir</a>
+            </div>
+            <div class="col">
+                <button id="botao-cadastrar" class="btn green" type="submit">Concluída</button>
+            </div>
+        </div>
+       
 
 `
 
-document.querySelector("lista-tarefas").appendChild(card)
+document.querySelector("#lista-manutencao").appendChild(card)
 
 }
