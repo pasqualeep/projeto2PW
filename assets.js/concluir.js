@@ -10,4 +10,5 @@ function concluir (id){
     localStorage.setItem("tarefas", JSON.stringify (tarefas))
 
     atualizar()
+    calcularEstatisticas()
 }
